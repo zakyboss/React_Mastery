@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div
+      class="bg-green-800 height-64 p-4 items place-items-center"
+      id="container"
+    >
+      <h1 class="font-sans pt-2 pl-3 pr-3" id="greet">
+        Hello Welcome To Cat Facts !
+      </h1>
+      <button
+        class="bg-gradient-to-r from-green-400 to-teal-500 p-2 hover:bg-sky-700"
+        id="btn"
+      >
+        Cat Fact !
+      </button>
+      <div
+        class="bg-teal-300 h-'auto' w-[300px] rounded hidden"
+        id="fact"
+      ></div>
+    </div>
+
+    <script>
+      // We are going to use fetch cat facts from an api and manipulate them async
+      let count = 1;
+      async function getCatFact() {
+        let data = await fetch("https://catfact.ninja/fact");
+        let formatedData = await data.json();
+        console.log(formatedData);
+        let factBox = document.querySelector("#fact");
+        let html = `<h3 class="ml-3 flex-wrap" id="content">${count} ${formatedData.fact}</h3>`;
+        let greeter = document.querySelector("#greet");
+        greeter.textContent = `Here are your Cat Facts !`;
+        factBox.innerHTML = html; // Replaces content instead of appending
+        factBox.classList.remove("hidden");
+        count++;
+      }
+      let debounceTimeout;
+      button.addEventListener("click", () => {
+        clearTimeout(debounceTimeout);
+        debounceTimeout = setTimeout(getCatFact, 300);
+      });
+    </script>
+  </body>
+</html>
