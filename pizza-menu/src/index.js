@@ -72,28 +72,34 @@ function Menu(){
   return (
     <main className='menu'>
   <h2>Our Menu</h2>
-  <Pizza name='pizza Spinaci' ingredient='Tomato, mozarella, spinach, and ricotta cheese' photoName= 'pizzas/spinaci.jpg'
+  {/* <Pizza name='pizza Spinaci' ingredient='Tomato, mozarella, spinach, and ricotta cheese' photoName= 'pizzas/spinaci.jpg'
   price={10} soldOut='false'/>
   <Pizza name = 'Pizza Prosciutto' ingredient='Tomato, mozarella, ham, aragula, and burrata cheese' 
-  photoName='pizzas/prosciutto.jpg' price={18} soldOut='false'/>
+  photoName='pizzas/prosciutto.jpg' price={18} soldOut='false'/> */}
+  <ul className='pizzas'> 
+  {pizzaData.map(pizza => <Pizza pizzaObj={pizza} key={pizza.name}/>) }
+
+  </ul>
+ 
   </main>
   )
 }
 function Pizza(props){
   // console.log(props)
    return(   
-     <div className='pizza'>
-   <img src={props.photoName} alt='pizza-focaccia'/>
+     <li className='pizza'>
+   <img src={props.pizzaObj.photoName} alt='pizza-focaccia'/>
     <div>
-     <h3>{props.name}</h3>
-   <p>{props.ingredient}</p>
-   <p>{props.price*3}</p>
+     <h3>{props.pizzaObj.name}</h3>
+   <p>{props.pizzaObj.ingredient}</p>
+   <p>{props.pizzaObj.price*3}</p>
    </div>
-   <p>{props.soldOut?'Available':'Sorry we are sold out'}</p>
+   <p>{props.pizzaObj.soldOut?'Available':'Sorry we are sold out'}</p>
 
-   </div>
+   </li>
    )
 }                   
+
 
 function Footer (){
   let hour = new Date().getHours();
