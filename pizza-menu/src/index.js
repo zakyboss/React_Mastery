@@ -1,6 +1,51 @@
 import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import Delivery from './DeliveryVehicles';
+const deliveryVehicles = [
+  {
+    id: 1,
+    type: "Truck",
+    capacity: "10 tons",
+    driver: "John Doe",
+    isAvailable: true,
+     photoName :'vehicles/truck.jpeg'
+  },
+  {
+    id: 2,
+    type: "Van",
+    capacity: "2 tons",
+    driver: "Jane Smith",
+    isAvailable: false,
+    photoName :'vehicles/van.jpeg'
+  },
+  {
+    id: 3,
+    type: "Motorcycle",
+    capacity: "50 kg",
+    driver: "Alice Johnson",
+    isAvailable: true,
+    photoName :'vehicles/motorcycle.jpeg'
+  },
+
+  {
+    id: 4,
+    type: "Drone",
+    capacity: "5 kg",
+    driver: "Automated",
+    isAvailable: true,
+    photoName :'vehicles/drone.jpeg'
+  },
+  {
+    id: 5,
+    type: "Bicycle",
+    capacity: "25 kg",
+    driver: "Tom Brown",
+    isAvailable: false,
+    photoName :'vehicles/bicycle.jpeg'
+  },
+];
+
 const pizzaData = [
     {
       name: "Focaccia",
@@ -52,6 +97,7 @@ function App(){
         <div className='container'>
         <Header/>
         <Menu/>
+        {deliveryVehicles.map(vehicle=><Delivery deliveryObj={vehicle}/>)}
         <Footer/>
         </div>
     )
