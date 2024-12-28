@@ -115,18 +115,17 @@ function Header(){
   )
 }
 function Menu(){
+  let pizzas= pizzaData
+  // pizzas=0
   return (
     <main className='menu'>
   <h2>Our Menu</h2>
-  {/* <Pizza name='pizza Spinaci' ingredient='Tomato, mozarella, spinach, and ricotta cheese' photoName= 'pizzas/spinaci.jpg'
-  price={10} soldOut='false'/>
-  <Pizza name = 'Pizza Prosciutto' ingredient='Tomato, mozarella, ham, aragula, and burrata cheese' 
-  photoName='pizzas/prosciutto.jpg' price={18} soldOut='false'/> */}
-  <ul className='pizzas'> 
-  {pizzaData.map(pizza => <Pizza pizzaObj={pizza} key={pizza.name}/>) }
-
-  </ul>
- 
+  {pizzas.length>0?
+    <ul className='pizzas'> 
+  {pizzaData.map(pizza => <Pizza pizzaObj={pizza} key={pizza.name}/>) 
+}
+</ul> : <h1> Please come back later we are still working on our menu</h1>
+}
   </main>
   )
 }
@@ -154,15 +153,15 @@ function Footer (){
   const closeHour = 23;
   const isOpen = hour>=opeHour&&hour<=closeHour
   console.log(hour)
-  return (<footer>{isOpen && (<p>Hello World</p>
-  
-  
-  
-  }
-  <div className='order'>
-<p>We are</p>
+  return (
+   
+<footer>
+<div className='order'>
+  {isOpen && <p>We are open unitil {closeHour}:00</p>}
+  <button className='btn'> Order</button>
   </div>
-  </footer>)
+  </footer>
+)
 }
                                 //   2: Return some html inform of jsx 
 const root = ReactDOM.createRoot(document.getElementById('root'));
