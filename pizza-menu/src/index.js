@@ -148,9 +148,21 @@ function Pizza(props){
 
 
 function Footer (){
+  
   let hour = new Date().getHours();
+  const opeHour =12 ;
+  const closeHour = 23;
+  const isOpen = hour>=opeHour&&hour<=closeHour
   console.log(hour)
-  return <footer>{hour>7 && hour<19? `We are Open`:`Sorry We are Closed`}</footer>
+  return (<footer>{isOpen && (<p>Hello World</p>
+  
+  
+  
+  }
+  <div className='order'>
+<p>We are</p>
+  </div>
+  </footer>)
 }
                                 //   2: Return some html inform of jsx 
 const root = ReactDOM.createRoot(document.getElementById('root'));
