@@ -129,20 +129,20 @@ function Menu(){
   </main>
   )
 }
-function Pizza(props){
+function Pizza({pizzaObj}){
   // console.log(props)
-  if(props.pizzaObj.soldOut){
+  if(pizzaObj.soldOut){
     return null
   }else {
    return(   
      <li className='pizza'>
-   <img src={props.pizzaObj.photoName} alt='pizza-focaccia'/>
+   <img src={pizzaObj.photoName} alt='pizza-focaccia'/>
     <div>
-     <h3>{props.pizzaObj.name}</h3>
-   <p>{props.pizzaObj.ingredient}</p>
-   <p>{props.pizzaObj.price*3}</p>
+     <h3>{pizzaObj.name}</h3>
+   <p>{pizzaObj.ingredient}</p>
+   <p>{pizzaObj.price*3}</p>
    </div>
-   <p>{props.pizzaObj.soldOut?'Available':'Sorry we are sold out'}</p>
+   <p>{pizzaObj.soldOut?'Available':'Sorry we are sold out'}</p>
 
    </li>
    )
@@ -153,7 +153,7 @@ function Pizza(props){
 function Footer (){
   
   let hour = new Date().getHours();
-  const opeHour =23 ;
+  const opeHour =4 ;
   const closeHour = 23;
   const isOpen = hour>=opeHour&&hour<=closeHour
   console.log(hour)
