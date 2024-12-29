@@ -97,7 +97,7 @@ function App(){
         <div className='container'>
         <Header/>
         <Menu/>
-        {deliveryVehicles.map(vehicle=><Delivery deliveryObj={vehicle}/>)}
+        {/* {deliveryVehicles.map(vehicle=><Delivery deliveryObj={vehicle}/>)} */}
         <Footer/>
         </div>
     )
@@ -131,6 +131,9 @@ function Menu(){
 }
 function Pizza(props){
   // console.log(props)
+  if(props.pizzaObj.soldOut){
+    return null
+  }else {
    return(   
      <li className='pizza'>
    <img src={props.pizzaObj.photoName} alt='pizza-focaccia'/>
@@ -143,16 +146,22 @@ function Pizza(props){
 
    </li>
    )
+  }
 }                   
 
 
 function Footer (){
   
   let hour = new Date().getHours();
-  const opeHour =12 ;
+  const opeHour =23 ;
   const closeHour = 23;
   const isOpen = hour>=opeHour&&hour<=closeHour
   console.log(hour)
+  if (!isOpen){
+    return ( <p>We are happy to serve you from {opeHour}:00 t0 {closeHour}:00</p>)
+  }else {
+
+  
   return (
    
 <footer>
@@ -162,6 +171,7 @@ function Footer (){
   </div>
   </footer>
 )
+  }
 }
                                 //   2: Return some html inform of jsx 
 const root = ReactDOM.createRoot(document.getElementById('root'));
