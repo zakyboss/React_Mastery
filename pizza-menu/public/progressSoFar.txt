@@ -1,0 +1,12 @@
+As Per Now I have learnt 
+     1. React importing through 'react'
+     2.React Dom importing through 'react-dom/client'
+     3.Component function creation (The first letter Capitalized and must return JSX - If more than one element is being return we have to use a container i.e Div or something)
+     4. Inline style using style = {{backgroundColor:'green'}}
+     5.Including Some JS logic using {}
+     6. Conditionally rendering using && operator or Ternary operator(You can setup using if else that conditionally return this JSX or another)
+     7.Using props to dynamically render individual elements of the same type but different content
+     8.Looping through array contents using Map method
+     9.Destructuring Props using {somethigHere};
+     10.React fragment - Incase you want to return something outside the main Div or element (<> </> or <React.Fragment> </React.Fragment)
+

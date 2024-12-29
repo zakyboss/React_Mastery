@@ -121,10 +121,15 @@ function Menu(){
     <main className='menu'>
   <h2>Our Menu</h2>
   {pizzas.length>0?
+   <React.Fragment>
+  
+   <p>Authentic Italian Cuisine . 6 creative dishes to choose from our stone oven , all organic , all delicious</p>
+
     <ul className='pizzas'> 
   {pizzaData.map(pizza => <Pizza pizzaObj={pizza} key={pizza.name}/>) 
 }
-</ul> : <h1> Please come back later we are still working on our menu</h1>
+</ul> </React.Fragment> : <h1> Please come back later we are still working on our menu</h1> 
+
 }
   </main>
   )
