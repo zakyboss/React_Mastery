@@ -136,23 +136,18 @@ function Menu(){
 }
 function Pizza({pizzaObj}){
   // console.log(props)
-  if(pizzaObj.soldOut){
-    return null
-  }else {
    return(   
-     <li className='pizza'>
+     <li className={`pizza ${pizzaObj.soldOut?'sold-out':""}`}>
    <img src={pizzaObj.photoName} alt='pizza-focaccia'/>
     <div>
      <h3>{pizzaObj.name}</h3>
    <p>{pizzaObj.ingredient}</p>
-   <p>{pizzaObj.price*3}</p>
    </div>
-   <p>{pizzaObj.soldOut?'Available':'Sorry we are sold out'}</p>
+   <span>{!pizzaObj.soldOut?<p>{pizzaObj.price*3}</p>:'Sorry we are SOLD OUT !'}</span>
 
    </li>
    )
   }
-}                   
 
 
 function Footer (){
