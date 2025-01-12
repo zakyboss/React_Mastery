@@ -97,3 +97,14 @@ h3 {
 .close:hover {
   color: #7950f2;
 }
+.dataContainer {
+  background-color: white; /* White background for the data area */
+  position: relative; /* Maintain relative positioning */
+  top: 20px; /* Adjust the top padding */
+  margin-left: auto; /* Remove left alignment */
+  margin-right: 10%; /* Add right alignment for proper spacing */
+  border-radius: 10px; /* Smooth rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+  padding: 20px; /* Internal spacing for content */
+}
+
