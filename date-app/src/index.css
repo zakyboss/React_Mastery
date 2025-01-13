@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.headerContainer {
+  display: flex;
+}
+#calender {
+  height: 100px;
+}
+#header {
+  margin-left: 35%;
+}
+.container {
+  height: 350px;
+  background-color: whitesmoke;
+  width: 500px;
+  margin-left: 35%;
+}
+.step {
+  text-align: center;
+}
+.stepButton {
+  padding: 2px;
+  background-color: blue;
+  color: white;
+  border-radius: 4px;
+  margin: 20px;
+  width:70px;
+}
+.counter{
+  text-align: center;
+
+}
+.countButton {
+  padding: 2px;
+  background-color: green;
+  color: white;
+  border-radius: 4px;
+  margin: 20px;
+  width:70px;
+}
