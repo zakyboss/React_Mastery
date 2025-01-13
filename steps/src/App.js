@@ -6,7 +6,7 @@ const messages = [
 ];
 function App() {
   const [step,setStep]= useState(1)
-  const [display,setDisplay]= useState(false)
+  const [display,setDisplay]= useState(true)
   function handleClose(){
 setDisplay(!display)
   }
@@ -16,16 +16,16 @@ setDisplay(!display)
   //  use state 
   //  update the state    
  if( step>1 ){
- setStep(step-1)
+ setStep(s=> s-1)
   }
 }
   function handleNext(){
 if( step<3){
-  setStep(step+1)
-   }
+  setStep(s=> s+1)
+}
   }
   function handleReset(){
-    setStep(1)
+    setStep(s=> s=1)
   }
   if(display){
     return (
