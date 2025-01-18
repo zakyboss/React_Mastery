@@ -1,0 +1,21 @@
+.headerContainer {
+  display: flex;
+}
+#calender {
+  height: 100px;
+}
+#header {
+  margin-left: 35%;
+}
+.container {
+  height: 350px;
+  background-color: whitesmoke;
+  width: 500px;
+  margin-left: 35%;
+}
+.date-container{
+  height:300px;
+  width:400px;
+  background-color:#4355;
+  margin-left:35%;
+}

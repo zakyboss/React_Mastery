@@ -5,10 +5,7 @@ const days = ['Monday', 'Tuesday', '', '','','']
 export default function Main (){
     const [step , setStep]= useState(1);
     const [count, setCount]= useState(0);
-    const date = new Date(Date.now()); // Current date and time
-    // Format the date to a human-readable string
-    const formattedDate = date.toLocaleDateString(); // e.g., "1/13/2025"
-
+    
     function handleIncStep(){
         setStep((s)=>s+1)
     }
@@ -24,6 +21,9 @@ function handleDecCurrent(){
     setCount((c)=> c-step)   
 
 }
+const date = new Date('June 12 2015');
+date.setDate(date.getDate() + count);
+
     return (
         <div className='container'>
 <section className='step'>
@@ -38,7 +38,9 @@ function handleDecCurrent(){
     <h2>Counter : {count}</h2>
         <button className='countButton' onClick={handleIncCurrent}>next</button>
         <button className='countButton' onClick={handleDecCurrent}>Previous</button>
-        <h5>In  days it will be {formattedDate[3]} </h5>
+
+        { count !==0 && count>0? 
+            <h5>In {count} days it will be {date.toDateString()} </h5> :  <h5> {Math.abs(count)} days ago it was  {date.toDateString()} </h5>}
         </span>
 </section>
 
