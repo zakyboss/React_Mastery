@@ -65,7 +65,10 @@ function TabContent({ item }) {
   function handleInc() {
     setLikes(likes + 1);
   }
-
+    function handleUndo(){
+        setShowDetails(true);
+        setLikes(0)
+    }
   return (
     <div className="tab-content">
       <h4>{item.summary}</h4>
