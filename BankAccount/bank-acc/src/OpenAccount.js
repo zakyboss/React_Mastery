@@ -1,11 +1,15 @@
-import React from 'react'
-import './index.css'
-export default function OpenAccount({dispatch}) {
+import React from "react";
+import "./index.css";
+export default function OpenAccount({ dispatch, active }) {
   return (
     <div>
-        <button className='btn' onClick={dispatch({type:'openAccount'})} >
-            Open Account
-        </button>
+      <button
+        className="btn"
+        onClick={() => dispatch({ type: "openAccount" })}
+        disabled={active}
+      >
+        Open Account
+      </button>
     </div>
-  )
+  );
 }
