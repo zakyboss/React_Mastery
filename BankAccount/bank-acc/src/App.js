@@ -18,9 +18,15 @@ function reducer(state, action) {
     case "openAccount":
       return { ...state, active: true, balance: state.balance + 500 };
     case "deposit":
-      return { ...state, balance: state.balance + 150 };
+      return {
+        ...state,
+        balance: state.balance + action.payload,
+      };
     case "withdraw":
-      return { ...state, balance: state.balance > 0 ? state.balance - 50 : 0 };
+      return {
+        ...state,
+        balance: state.balance > 0 ? state.balance - action.payload : 0,
+      };
     case "requestLoan":
       if (!state.active || state.activeLoan) return state;
       return {
@@ -40,7 +46,7 @@ function reducer(state, action) {
       };
     case "closeAccount":
       if (state.balance > 0 || state.loan > 0 || !state.active) return state;
-      return { ...state, balance: 0, active: false };
+      return { ...state, balance: 0, active: false, activeLoan: false };
     default:
       throw new Error("Unknown Action");
   }
