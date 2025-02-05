@@ -6,25 +6,23 @@ export default function Deposit({ dispatch, active }) {
 
   return (
     <div>
-      <input
-        className="input"
-        type="number"
-        value={amount}
-        onChange={(e) => setAmount(() => e.target.value)}
-        placeholder="Enter Amount"
-      />
-      <button
-        onClick={(e) => {
-          // e.preventDefault();
-          if (!amount || !active) {
-            return;
-          }
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          if (!active || !amount) return;
           dispatch({ type: "deposit", payload: Number(amount) });
           setAmount("");
         }}
       >
-        Deposit
-      </button>
+        <input
+          className="input"
+          type="number"
+          value={amount}
+          onChange={(e) => setAmount(() => e.target.value)}
+          placeholder="Enter Amount"
+        />
+        <button type="submit">Deposit</button>
+      </form>
     </div>
   );
 }

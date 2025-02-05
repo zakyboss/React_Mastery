@@ -5,21 +5,22 @@ export default function Withdraw({ active, dispatch }) {
   const [amount, setAmount] = useState("");
   return (
     <div>
-      <input
-        value={amount}
-        onChange={(e) => setAmount(e.target.value)}
-        className="input"
-        placeholder="Enter Amount"
-      />
-      <button
-        onClick={(e) => {
-          if (!active || !amount) e.preventDefault();
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          if (!active || !amount) return;
           dispatch({ type: "withdraw", payload: Number(amount) });
           setAmount("");
         }}
       >
-        Withdraw
-      </button>
+        <input
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+          className="input"
+          placeholder="Enter Amount"
+        />
+        <button type="submit">Withdraw</button>
+      </form>
     </div>
   );
 }
