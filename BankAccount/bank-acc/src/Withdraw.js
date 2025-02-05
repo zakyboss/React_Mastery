@@ -1,15 +1,24 @@
 import React from "react";
 import "./index.css";
-
+import { useState } from "react";
 export default function Withdraw({ active, dispatch }) {
+  const [amount, setAmount] = useState("");
   return (
     <div>
+      <input
+        value={amount}
+        onChange={(e) => setAmount(e.target.value)}
+        className="input"
+        placeholder="Enter Amount"
+      />
       <button
-        className="btn"
-        onClick={() => dispatch({ type: "withdraw" })}
-        disabled={!active}
+        onClick={(e) => {
+          if (!active || !amount) e.preventDefault();
+          dispatch({ type: "withdraw", payload: Number(amount) });
+          setAmount("");
+        }}
       >
-        Withdraw 50
+        Withdraw
       </button>
     </div>
   );
