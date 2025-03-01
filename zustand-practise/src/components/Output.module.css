@@ -1,0 +1,39 @@
+/* Output.module.css */
+
+.output-container {
+    width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .blog-title {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .blog-content {
+    display: block;
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
+  }
+  
+  @media (max-width: 500px) {
+    .output-container {
+      width: 90%;
+    }
+  }
+  
