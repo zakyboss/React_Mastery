@@ -7,16 +7,27 @@ const useBlog = create(function (set) {
     blogContent: [],
 
     // functions
-   createBlog : function (enteredBlogID , enteredBlogTitle ,enteredBlogContent ){
-            set(function (state){
-                return {
-                    ...state , blogID : enteredBlogID ,blogTitle : enteredBlogTitle , blogContent : enteredBlogContent
-                }
-            })
-   }
-   
-
-
+    createBlog: function (enteredBlogID, enteredBlogTitle, enteredBlogContent) {
+      if (!enteredBlogContent || !enteredBlogID || !enteredBlogTitle) {
+        return;
+      }
+      set(function (state) {
+        return {
+          ...state,
+          blogID: enteredBlogID,
+          blogTitle: enteredBlogTitle,
+          blogContent: enteredBlogContent,
+          blogs: [
+            ...state.blogs,
+            {
+              blogID: enteredBlogID,
+              blogTitle: enteredBlogTitle,
+              blogContent: enteredBlogContent,
+            },
+          ],
+        };
+      });
+    },
   };
 });
-export {useBlog}
+export { useBlog };
