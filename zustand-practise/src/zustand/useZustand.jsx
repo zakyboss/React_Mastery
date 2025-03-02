@@ -28,6 +28,11 @@ const useBlog = create(function (set) {
         };
       });
     },
+    deleteBlog: (id) =>
+      set((state) => ({
+        ...state,
+        blogs: state.blogs.filter((value) => value.blogID != id),
+      })),
   };
 });
 export { useBlog };
